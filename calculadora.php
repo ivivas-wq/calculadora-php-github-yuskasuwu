@@ -8,13 +8,12 @@ function calcular($operacio, $primerNumero, $segonNumero) {
         case 'm':
             return $primerNumero * $segonNumero;
         case 'd':
-            if ($segonNumero != 0) {
-                return $primerNumero / $segonNumero;
-            } else {
-                return "Error";
+            if ($segonNumero == 0) {
+                return "Error: No es pot dividir per zero";
             }
+            return $primerNumero / $segonNumero;
         default:
-            return "Error";
+            return "Error: Operació no reconeguda";
     }
 }
 
