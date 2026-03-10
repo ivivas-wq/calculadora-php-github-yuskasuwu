@@ -1,17 +1,20 @@
 <?php
 function calcular($operacio, $primerNumero, $segonNumero) {
-    if ($operacio == "s") {
-        return $primerNumero + $segonNumero;
-    } else if ($operacio == "r") {
-        return $primerNumero - $segonNumero;
-    } else if ($operacio == "m") {
-        return $primerNumero * $segonNumero;
-    } else if ($operacio == "d") {
-        if ($segonNumero != 0) {
-            return $primerNumero / $segonNumero;
-        } else {
+    switch ($operacio) {
+        case 's':
+            return $primerNumero + $segonNumero;
+        case 'r':
+            return $primerNumero - $segonNumero;
+        case 'm':
+            return $primerNumero * $segonNumero;
+        case 'd':
+            if ($segonNumero != 0) {
+                return $primerNumero / $segonNumero;
+            } else {
+                return "Error";
+            }
+        default:
             return "Error";
-        }
     }
 }
 
